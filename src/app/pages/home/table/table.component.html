@@ -1,0 +1,44 @@
+<div class="grid__body" #gridBodyRef>
+  <div class="grid__no-items text-center" *ngIf="!isLoading && (!rows || !rows.length); else hasItems">
+    <span>Không có bản ghi nào!</span>
+  </div>
+  <ng-template #hasItems>
+    <table class="table">
+      <thead>
+      <tr>
+        <th scope="col" *ngFor="let cell of cells;" [ngClass]="{
+                            'grid__block--left': cell.align === 'left',
+                            'grid__block--center': cell.align === 'center',
+                            'grid__block--right': cell.align === 'right'
+                        }" [style.width.px]="cell.width">
+          {{cell.label}}
+        </th>
+        <th class="option-custom">Thao tác</th>
+      </tr>
+      </thead>
+      <tbody class="tbody-custom">
+      <tr class="grid__item"
+          *ngFor="let item of rows | paginate: { itemsPerPage: page.size,currentPage: page.pageNumber},let i = index">
+        <td class="grid__block" *ngFor="let cell of cells;" [ngClass]="{
+                        'grid__block--left': cell.align === 'left',
+                        'grid__block--center': cell.align === 'center',
+                        'grid__block--right': cell.align === 'right'
+                    }" [style.width.px]="cell.width">
+          {{item[cell.field]}}
+        </td>
+        <td class="option-custom">
+          <button (click)="showDetail(item)" class="btn btn-info" style="cursor: pointer;margin-right: 5px;">Chi tiết</button>
+          <button (click)="editItem(item)" class="btn btn-warning" style="cursor: pointer;margin-right: 5px;">Sửa</button>
+          <button (click)="deleteItem(item)" class="btn btn-secondary" style="cursor: pointer;">Xóa</button>
+        </td>
+      </tr>
+      </tbody>
+      <ngx-pagination *ngIf="pagingMode === 'paging'"
+                      (pageChange)="page.pageNumber = $event"
+                      [firstLabel]="null"
+                      [previousLabel]="null"
+                      [nextLabel]="null"
+                      [lastLabel]="null"></ngx-pagination>
+    </table>
+  </ng-template>
+</div>

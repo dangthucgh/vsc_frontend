@@ -1,0 +1,73 @@
+<div class="card">
+  <div class="card-header">
+    Create Account
+  </div>
+  <div class="card-body">
+    <form name="editForm" role="form" novalidate>
+      <div>
+        <div class="form-group row">
+          <label class="col-sm-2 text-right">First Name: </label>
+          <div class="col-sm-4">
+            <label>{{dataItem.firstname}}</label>
+          </div>
+          <label class="col-sm-2 text-right">Last Name: </label>
+          <div class="col-sm-4">
+            <label>{{dataItem.firstname}}</label>
+          </div>
+        </div>
+        <div class="form-group row">
+          <label class="col-sm-2 text-right">Balance: </label>
+          <div class="col-sm-4">
+            <label>{{dataItem.firstname}}</label>
+          </div>
+          <label class="col-sm-2 text-right">Age: </label>
+          <div class="col-sm-4">
+            <label>{{dataItem.firstname}}</label>
+          </div>
+        </div>
+        <div class="form-group row">
+          <label class="col-sm-2 text-right">Gender: </label>
+          <div class="col-sm-4 align-self-center">
+            <label style="display: inline-block;">
+              <input type="radio" name="gender" [(ngModel)]="dataItem.gender" [value]="'M'">
+              <span class="checkmark"></span>
+              <span class="content-panel">Male</span>
+            </label>
+            <label class="authen-type-item" style="margin-left: 33px;">
+              <input type="radio" name="gender" [(ngModel)]="dataItem.gender" [value]="'F'">
+              <span class="checkmark"></span>
+              <span class="content-panel">Female</span>
+            </label>
+          </div>
+          <label class="col-sm-2 text-right">Email: </label>
+          <div class="col-sm-4">
+            <label>{{dataItem.firstname}}</label>
+          </div>
+        </div>
+        <div class="form-group row">
+          <label class="col-sm-2 text-right">Employer: </label>
+          <div class="col-sm-4">
+            <label>{{dataItem.firstname}}</label>
+          </div>
+          <label class="col-sm-2 text-right">Address: </label>
+          <div class="col-sm-4">
+            <label>{{dataItem.firstname}}</label>
+          </div>
+        </div>
+        <div class="form-group row">
+          <label class="col-sm-2 text-right">City: </label>
+          <div class="col-sm-4">
+            <label>{{dataItem.firstname}}</label>
+          </div>
+          <label class="col-sm-2 text-right">State: </label>
+          <div class="col-sm-4">
+            <label>{{dataItem.firstname}}</label>
+          </div>
+        </div>
+      </div>
+      <div class="text-right">
+        <button type="button" class="btn btn-secondary" (click)="close()">Close</button>
+      </div>
+    </form>
+  </div>
+</div>

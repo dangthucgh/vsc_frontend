@@ -1,0 +1,66 @@
+table {
+  width: 100%;
+th {
+  background: rgb(0, 140, 255);
+  color: white;
+}
+
+th, td {
+  border-bottom: .5px solid #333;
+  padding: 10px 5px;
+}
+
+}
+.grid__block--left {
+  text-align: left;
+}
+
+.grid__block--center {
+  text-align: center;
+}
+
+.grid__block--right {
+  text-align: right;
+}
+
+tbody {
+  display: block;
+  height: 200px;
+  overflow: auto;
+}
+
+thead, tbody tr {
+  display: table;
+  width: 100%;
+  table-layout: fixed;
+}
+
+thead {
+  width: calc(100% - 1em)
+}
+
+.pagination {
+  margin-top: 30px;
+  display: flex;
+  justify-content: center;
+}
+
+.pagination a {
+  color: black;
+  float: left;
+  padding: 8px 16px;
+  text-decoration: none;
+}
+
+.pagination a.active {
+  background-color: rgb(0, 140, 255);
+  color: white;
+}
+
+.pagination a:hover:not(.active) {
+  background-color: #ddd;
+}
+
+.option-custom{
+  width: 150px;
+}
